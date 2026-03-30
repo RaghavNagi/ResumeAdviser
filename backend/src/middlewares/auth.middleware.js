@@ -3,7 +3,7 @@ const tokenBlacklistModel = require("../models/blacklist.model")
 
 async function authUser(req, res, next) {
 
-    const token = req.cookie.token
+    const token = req.cookies.token
 
     if(!token){
         return res.status(401).json({
@@ -38,5 +38,3 @@ async function authUser(req, res, next) {
 }
 
 module.exports = {authUser}
-
-
